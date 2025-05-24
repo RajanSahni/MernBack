@@ -10,7 +10,7 @@ const app = express();
 
 // Enhanced CORS configuration
 const corsOptions = {
-  origin: ['http://localhost:3000'],
+  origin: ['http://localhost:3000', 'http://localhost:3001'],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: [
     'Content-Type',
@@ -59,7 +59,7 @@ app.use(fileUpload({
 }));
 
 // MongoDB connection with modern options
-mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/auth-app', {
+mongoose.connect(process.env.MONGO_URI || 'mongodb+srv://rajansahni2003:jh218SDMgD9krIko@cluster0.51o9pcm.mongodb.net/auth-app?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   serverSelectionTimeoutMS: 5000,
